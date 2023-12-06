@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title%}homepage{% endblock %}
+
+{% block main %}
+    <h1>Available Polls</h1>
+    <br>
+    {% for poll in allPolls%}
+    <p>{{ poll.question }}
+    <a href="{% url 'vote' poll.id%}" class="btn btn-info btn-xs">Vote</a> <a href="{% url 'results' poll.id%}" class="btn btn-info btn-xs">View Results</a></p> 
+    {% endfor %}
+{% endblock %}
+
