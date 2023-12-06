@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}votepage{% endblock %}
+
+{% block main %}
+    <form method = "POST"> 
+        {% csrf_token %}
+        <h2>Cast your Vote</h2>
+        <p>{{ curr_poll.question }}</p>
+        <label>
+            <input type="radio" name="polls" value="option1" required>
+            {{curr_poll.opt1}}
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="polls" value="option2">
+            {{curr_poll.opt2}}
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="polls" value="option3">
+            {{curr_poll.opt3}}
+        </label>
+        
+        <br><br>
+        <input type="submit">
+    </form>
+{% endblock %}
